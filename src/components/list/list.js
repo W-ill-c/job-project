@@ -5,6 +5,8 @@ export default function WholeList(){
 
     const [data, setData] = useState([]);
 
+    const [showFurtherInfo, setShowFurtherInfo] = useState(false);
+
     useEffect(()=>{
         let collectData = async () => {
             try{
@@ -23,16 +25,25 @@ export default function WholeList(){
 
     return(
         <section className="wholeList">
-            <div className="schoolInfo">
-                <h3>School Name:</h3>
-                <h5>School Postcode:</h5>
-                <Button variant="primary">View Further Information</Button>{' '}
-            </div>
-            <div className="furtherSchoolInfo">
-                <h5>Full Address:</h5>
-                <h5>Education Stage:</h5>
-                <h5>School Website:</h5>
-                <h5>School Capacity:</h5>
+            <div className="indiviudalSchool">
+                <div className="schoolInfo">
+                    <h4>School Name:</h4>
+                    <h5>School Postcode:</h5>
+                    <Button variant="primary" id="viewMoreButton" onClick={()=>{setShowFurtherInfo(!showFurtherInfo)}}>View Further Information</Button>{' '}
+                </div>
+
+                {/* The onClick event for the button inverts the value of the showFurtherInfo state*/}
+
+                {/* The && operator allows me to conditionally render the following div depending on the booleon value of the showFurtherInfo state  */}
+
+                {showFurtherInfo && 
+                    <div className="furtherSchoolInfo">
+                        <h5>Full Address:</h5>
+                        <h5>Education Stage:</h5>
+                        <h5>School Website:</h5>
+                        <h5>School Capacity:</h5>
+                    </div>
+                }
             </div>
         </section>
     );
