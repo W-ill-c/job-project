@@ -1,5 +1,7 @@
 .wholeList{
     width: 600px;
+    min-height: 100px;
+    position: relative;
     border: solid 1px;
     margin: 30px auto;
     padding: 10px 7.5px;
@@ -19,4 +21,25 @@
     position: absolute;
     top: 50%;
     right: 0%;
+    transition: opacity 1s;
+}
+
+#viewLessButton{
+    display: none;
+    transition: opacity 1s;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+
+.furtherSchoolInfo{
+    display: none;
+}
+
+#spinner{
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left:50%;
 }
