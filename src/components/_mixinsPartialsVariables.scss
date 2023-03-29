@@ -1,0 +1,11 @@
+$border: solid 1px #191970;
+
+@mixin positionAbsolute($top:50%){
+    position: absolute;
+    top: $top;
+}
+
+%flexSpacing{
+    display: flex;
+    justify-content: space-evenly;
+}

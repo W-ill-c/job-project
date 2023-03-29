@@ -1,45 +1,82 @@
+@use '../mixinsPartials';
+
 .wholeList{
-    width: 600px;
+    max-width: 1150px;
     min-height: 100px;
+    max-height: 1200px;
+    overflow-y:scroll;
     position: relative;
-    border: solid 1px;
+    border: $border;
     margin: 30px auto;
     padding: 10px 7.5px;
     border-radius: 15px;
+    @extend %flexSpacing;
+    // flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &::-webkit-scrollbar{
+        visibility: hidden;
+    }
 }
 
 .indiviudalSchool{
-    border: solid 1px;
+    border: solid 1px #191970;
     border-radius: 10px;
     padding: 3.5px;
+    max-width: 550px;
+    min-width: 550px;
+    margin: 5px 0px;
+    min-height: 98px;
+    background-color: #bfdae3;
 }
 .schoolInfo{
     position: relative;
+    height: 98px;
+    @extend %flexSpacing;
+    flex-direction: column;
 }
 
 #viewMoreButton{
     position: absolute;
-    top: 50%;
+    @include positionAbsolute($top:60%);
     right: 0%;
     transition: opacity 1s;
+
+    &:focus{
+        cursor: pointer;
+    }
 }
 
 #viewLessButton{
     display: none;
     transition: opacity 1s;
-    position: absolute;
-    top: 50%;
+    @include positionAbsolute($top:60%);
     right: 0%;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .furtherSchoolInfo{
     display: none;
 }
 
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 #spinner{
     font-size: 1.5rem;
     transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
+    @include positionAbsolute($top:50%);
     left:50%;
+    animation: rotate;
+    animation-duration: 1.5s;
 }
