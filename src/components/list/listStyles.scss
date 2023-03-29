@@ -1,4 +1,4 @@
-@use '../mixinsPartials';
+@import '../mixinsPartialsVariables';
 
 .wholeList{
     max-width: 1150px;
@@ -11,9 +11,9 @@
     padding: 10px 7.5px;
     border-radius: 15px;
     @extend %flexSpacing;
-    // flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-color: #FFFBF6;
 
     &::-webkit-scrollbar{
         visibility: hidden;
@@ -21,14 +21,14 @@
 }
 
 .indiviudalSchool{
-    border: solid 1px #191970;
+    border: $border;
     border-radius: 10px;
     padding: 3.5px;
     max-width: 550px;
     min-width: 550px;
     margin: 5px 0px;
     min-height: 98px;
-    background-color: #bfdae3;
+    background-color: #ADD8E6;
 }
 .schoolInfo{
     position: relative;
@@ -38,7 +38,6 @@
 }
 
 #viewMoreButton{
-    position: absolute;
     @include positionAbsolute($top:60%);
     right: 0%;
     transition: opacity 1s;
@@ -79,4 +78,61 @@
     left:50%;
     animation: rotate;
     animation-duration: 1.5s;
+}
+
+@media screen and (min-width: $laptopMin) and (max-width: $laptopMax){
+    .wholeList{
+        max-width: 850px;
+    }
+}
+
+@media screen and (min-width: $phoneMin) and (max-width: $tabletMax){
+    .wholeList{
+        max-width: 500px;
+    }
+
+    // .indiviudalSchool{}
+
+    .indiviudalSchool{
+        min-width: 450px;
+        max-width: 450px;
+        min-height: 130px;
+    }
+
+    #viewMoreButton{
+        @include positionAbsolute($top:80%);
+    }
+
+    #viewLessButton{
+        @include positionAbsolute($top:80%);
+    }
+
+}
+
+@media screen and (min-width: $phoneMin) and (max-width: $phoneMax){
+    .wholeList{
+        max-width: 400px;
+        align-items: center;
+        // flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .indiviudalSchool{
+        min-width: 380px;
+        max-width: 380px;
+        min-height: 215px;
+        padding: 0px 10px;
+    }
+
+    .schoolInfo{
+        min-height: 215px;
+    }
+
+    #viewLessButton{
+        @include positionAbsolute($top:80%);
+    }
+
+    #viewMoreButton{
+        @include positionAbsolute($top:80%);
+    }
 }

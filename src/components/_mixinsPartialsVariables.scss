@@ -1,4 +1,10 @@
-$border: solid 1px #191970;
+$border: 1.3px solid #191970;
+$phoneMax:480px;
+$phoneMin: 320px;
+$tabletMin:481px;
+$tabletMax: 768px;
+$laptopMin: 769px;
+$laptopMax: 1024px;
 
 @mixin positionAbsolute($top:50%){
     position: absolute;
@@ -9,3 +15,4 @@ $border: solid 1px #191970;
     display: flex;
     justify-content: space-evenly;
 }
+
