@@ -7,13 +7,12 @@
     overflow-y:scroll;
     position: relative;
     border: $border;
-    margin: 15px auto;
+    margin: 75px auto 10px auto;
     padding: 10px 7.5px;
     border-radius: 15px;
     @extend %flexSpacing;
     flex-wrap: wrap;
     align-items: flex-start;
-    background-color: #FFFBF6;
 
     &::-webkit-scrollbar{
         visibility: hidden;
@@ -28,8 +27,13 @@
     min-width: 550px;
     margin: 5px 0px;
     min-height: 98px;
-    background-color: #ADD8E6;
+    background-color: $lightBlue;
+
+    h4, h5{
+        cursor:default;
+    }
 }
+
 .schoolInfo{
     position: relative;
     height: 98px;
@@ -40,20 +44,8 @@
 #viewMoreButton{
     @include positionAbsolute($top:60%);
     right: 0%;
-    transition: opacity 1s;
 
     &:focus{
-        cursor: pointer;
-    }
-}
-
-#viewLessButton{
-    display: none;
-    transition: opacity 1s;
-    @include positionAbsolute($top:60%);
-    right: 0%;
-
-    &:hover{
         cursor: pointer;
     }
 }
