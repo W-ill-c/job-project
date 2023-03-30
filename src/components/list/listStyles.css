@@ -1,0 +1,118 @@
+.schoolInfo, .wholeList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wholeList {
+  max-width: 1150px;
+  min-height: 100px;
+  max-height: 1200px;
+  overflow-y: scroll;
+  position: relative;
+  border: 1.3px solid #191970;
+  margin: 15px auto;
+  padding: 10px 7.5px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: #FFFBF6;
+}
+.wholeList::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.indiviudalSchool {
+  border: 1.3px solid #191970;
+  border-radius: 10px;
+  padding: 3.5px;
+  max-width: 550px;
+  min-width: 550px;
+  margin: 5px 0px;
+  min-height: 98px;
+  background-color: #ADD8E6;
+}
+
+.schoolInfo {
+  position: relative;
+  height: 98px;
+  flex-direction: column;
+}
+
+#viewMoreButton {
+  position: absolute;
+  top: 60%;
+  right: 0%;
+  transition: opacity 1s;
+}
+#viewMoreButton:focus {
+  cursor: pointer;
+}
+
+#viewLessButton {
+  display: none;
+  transition: opacity 1s;
+  position: absolute;
+  top: 60%;
+  right: 0%;
+}
+#viewLessButton:hover {
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#spinner {
+  font-size: 1.5rem;
+  margin: 10px auto;
+  animation: rotate;
+  animation-duration: 1.5s;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .wholeList {
+    max-width: 850px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wholeList {
+    max-width: 500px;
+  }
+  .indiviudalSchool {
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 140px;
+  }
+  .furtherSchoolInfo {
+    margin-top: 27px;
+  }
+  #viewMoreButton {
+    position: absolute;
+    top: 90%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .wholeList {
+    max-width: 400px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .indiviudalSchool {
+    min-width: 380px;
+    max-width: 380px;
+    min-height: 215px;
+    padding: 0px 10px;
+  }
+  .schoolInfo {
+    min-height: 215px;
+  }
+  #viewMoreButton {
+    position: absolute;
+    top: 80%;
+  }
+}/*# sourceMappingURL=listStyles.css.map */

@@ -1,0 +1,130 @@
+@import '../mixinsPartialsVariables';
+
+.wholeList{
+    max-width: 1150px;
+    min-height: 100px;
+    max-height: 1200px;
+    overflow-y:scroll;
+    position: relative;
+    border: $border;
+    margin: 15px auto;
+    padding: 10px 7.5px;
+    border-radius: 15px;
+    @extend %flexSpacing;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: #FFFBF6;
+
+    &::-webkit-scrollbar{
+        visibility: hidden;
+    }
+}
+
+.indiviudalSchool{
+    border: $border;
+    border-radius: 10px;
+    padding: 3.5px;
+    max-width: 550px;
+    min-width: 550px;
+    margin: 5px 0px;
+    min-height: 98px;
+    background-color: #ADD8E6;
+}
+.schoolInfo{
+    position: relative;
+    height: 98px;
+    @extend %flexSpacing;
+    flex-direction: column;
+}
+
+#viewMoreButton{
+    @include positionAbsolute($top:60%);
+    right: 0%;
+    transition: opacity 1s;
+
+    &:focus{
+        cursor: pointer;
+    }
+}
+
+#viewLessButton{
+    display: none;
+    transition: opacity 1s;
+    @include positionAbsolute($top:60%);
+    right: 0%;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#spinner{
+    font-size: 1.5rem;
+    margin: 10px auto;
+    animation: rotate;
+    animation-duration: 1.5s;
+}
+
+@media screen and (min-width: $laptopMin) and (max-width: $laptopMax){
+    .wholeList{
+        max-width: 850px;
+    }
+}
+
+@media screen and (min-width: $tabletMin) and (max-width: $tabletMax){
+    .wholeList{
+        max-width: 500px;
+    }
+
+    // .indiviudalSchool{}
+
+    .indiviudalSchool{
+        min-width: 450px;
+        max-width: 450px;
+        min-height: 140px;
+    }
+
+    .furtherSchoolInfo{
+        margin-top: 27px;
+    }
+
+    #viewMoreButton{
+        @include positionAbsolute($top:90%);
+    }
+
+}
+
+@media screen and (min-width: $phoneMin) and (max-width: $phoneMax){
+    .wholeList{
+        max-width: 400px;
+        align-items: center;
+        // flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .indiviudalSchool{
+        min-width: 380px;
+        max-width: 380px;
+        min-height: 215px;
+        padding: 0px 10px;
+    }
+
+    .schoolInfo{
+        min-height: 215px;
+    }
+
+
+    #viewMoreButton{
+        @include positionAbsolute($top:80%);
+    }
+}
