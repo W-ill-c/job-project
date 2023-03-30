@@ -7,7 +7,7 @@
     overflow-y:scroll;
     position: relative;
     border: $border;
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 10px 7.5px;
     border-radius: 15px;
     @extend %flexSpacing;
@@ -58,9 +58,6 @@
     }
 }
 
-.furtherSchoolInfo{
-    display: none;
-}
 
 @keyframes rotate{
     from {
@@ -73,9 +70,7 @@
 
 #spinner{
     font-size: 1.5rem;
-    transform: translate(-50%, -50%);
-    @include positionAbsolute($top:50%);
-    left:50%;
+    margin: 10px auto;
     animation: rotate;
     animation-duration: 1.5s;
 }
@@ -86,7 +81,7 @@
     }
 }
 
-@media screen and (min-width: $phoneMin) and (max-width: $tabletMax){
+@media screen and (min-width: $tabletMin) and (max-width: $tabletMax){
     .wholeList{
         max-width: 500px;
     }
@@ -96,15 +91,15 @@
     .indiviudalSchool{
         min-width: 450px;
         max-width: 450px;
-        min-height: 130px;
+        min-height: 140px;
+    }
+
+    .furtherSchoolInfo{
+        margin-top: 27px;
     }
 
     #viewMoreButton{
-        @include positionAbsolute($top:80%);
-    }
-
-    #viewLessButton{
-        @include positionAbsolute($top:80%);
+        @include positionAbsolute($top:90%);
     }
 
 }
@@ -128,9 +123,6 @@
         min-height: 215px;
     }
 
-    #viewLessButton{
-        @include positionAbsolute($top:80%);
-    }
 
     #viewMoreButton{
         @include positionAbsolute($top:80%);

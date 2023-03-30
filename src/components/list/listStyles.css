@@ -10,7 +10,7 @@
   overflow-y: scroll;
   position: relative;
   border: 1.3px solid #191970;
-  margin: 30px auto;
+  margin: 15px auto;
   padding: 10px 7.5px;
   border-radius: 15px;
   flex-wrap: wrap;
@@ -59,10 +59,6 @@
   cursor: pointer;
 }
 
-.furtherSchoolInfo {
-  display: none;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -73,10 +69,7 @@
 }
 #spinner {
   font-size: 1.5rem;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: 10px auto;
   animation: rotate;
   animation-duration: 1.5s;
 }
@@ -86,22 +79,21 @@
     max-width: 850px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .wholeList {
     max-width: 500px;
   }
   .indiviudalSchool {
     min-width: 450px;
     max-width: 450px;
-    min-height: 130px;
+    min-height: 140px;
+  }
+  .furtherSchoolInfo {
+    margin-top: 27px;
   }
   #viewMoreButton {
     position: absolute;
-    top: 80%;
-  }
-  #viewLessButton {
-    position: absolute;
-    top: 80%;
+    top: 90%;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -118,10 +110,6 @@
   }
   .schoolInfo {
     min-height: 215px;
-  }
-  #viewLessButton {
-    position: absolute;
-    top: 80%;
   }
   #viewMoreButton {
     position: absolute;
