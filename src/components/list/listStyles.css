@@ -10,12 +10,11 @@
   overflow-y: scroll;
   position: relative;
   border: 1.3px solid #191970;
-  margin: 15px auto;
+  margin: 75px auto 10px auto;
   padding: 10px 7.5px;
   border-radius: 15px;
   flex-wrap: wrap;
   align-items: flex-start;
-  background-color: #FFFBF6;
 }
 .wholeList::-webkit-scrollbar {
   visibility: hidden;
@@ -31,6 +30,9 @@
   min-height: 98px;
   background-color: #ADD8E6;
 }
+.indiviudalSchool h4, .indiviudalSchool h5 {
+  cursor: default;
+}
 
 .schoolInfo {
   position: relative;
@@ -42,20 +44,8 @@
   position: absolute;
   top: 60%;
   right: 0%;
-  transition: opacity 1s;
 }
 #viewMoreButton:focus {
-  cursor: pointer;
-}
-
-#viewLessButton {
-  display: none;
-  transition: opacity 1s;
-  position: absolute;
-  top: 60%;
-  right: 0%;
-}
-#viewLessButton:hover {
   cursor: pointer;
 }
 

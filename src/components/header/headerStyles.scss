@@ -1,0 +1,22 @@
+@import '../mixinsPartialsVariables';
+
+.schoolHeader{
+    @include positionAbsolute($top:0%);
+    left: 0%;
+    right: 0%;
+    z-index: 15;
+    color: black;
+    height: 55px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border: $border;
+    background-color: $lightBlue;
+    border-radius: 1px 1px 10px 10px;
+
+    h3{
+        color: #1520a6;
+        margin-left: 55px;
+        cursor:default;
+    }
+}
